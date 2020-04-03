@@ -53,18 +53,6 @@
                         android:text="@string/swipe_out_from_right_to_begin"
                         android:textColor="?attr/textColorSec"/>
 
-                    <Button
-                        android:id="@+id/btnMainHelp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@id/tvSwipeOut"
-                        android:layout_marginEnd="8dp"
-                        android:textAlignment="textEnd"
-                        android:background="#00000000"
-                        android:text="@string/title_activity_help"
-                        android:textColor="?colorAccent"/>
-
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 

@@ -6,4 +6,10 @@
         android:orderInCategory="100"
         android:title="@string/action_preferences"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/help"
+        android:enabled="true"
+        android:icon="@drawable/ic_help_black_24dp"
+        android:title="help"
+        app:showAsAction="ifRoom" />
 </menu>

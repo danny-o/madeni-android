@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity
     TextView tvWelcome, tvDebts, tvSummary;
     RelativeLayout rlDebts, rlSummary;
     SwipeRefreshLayout swipeMain;
-    Button btnHelp, btnDebts, btnSummary;
+    Button btnDebts, btnSummary;
     ImageButton btnHideDebts, btnHideSummary;
     SharedPreferences SP;
     int countOwe, countOwed;
@@ -53,9 +53,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolbarLayout = findViewById(R.id.toolbar_layout);
-        toolbarLayout.setCollapsedTitleTypeface(ResourcesCompat.getFont(this, R.font.nunito_light));
-        toolbarLayout.setExpandedTitleTypeface(ResourcesCompat.getFont(this, R.font.nunito_extra_light));
         FloatingActionButton fab = findViewById(R.id.fab);
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         rlDebts = findViewById(R.id.rlDebts);
@@ -63,7 +60,6 @@ public class MainActivity extends AppCompatActivity
         tvWelcome = findViewById(R.id.tvWelcome);
         tvDebts = findViewById(R.id.tvDebts);
         tvSummary = findViewById(R.id.tvSummary);
-        btnHelp = findViewById(R.id.btnMainHelp);
         btnDebts = findViewById(R.id.btnMainDebts);
         btnSummary = findViewById(R.id.btnMainSummary);
         btnHideDebts = findViewById(R.id.ibDebts);
@@ -94,13 +90,6 @@ public class MainActivity extends AppCompatActivity
         refreshWelcome();
         refreshDebts();
         refreshSummary();
-        btnHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HelpActivity.class));
-                finish();
-            }
-        });
         btnDebts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -244,6 +233,10 @@ public class MainActivity extends AppCompatActivity
                     .putExtra("home", getClass()));
             finish();
             return true;
+        }
+        else{
+            startActivity(new Intent(MainActivity.this, HelpActivity.class));
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

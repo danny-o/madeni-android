@@ -34,6 +34,7 @@ import android.widget.AdapterView;
 import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -71,7 +72,7 @@ public class NewDebtActivity extends AppCompatActivity {
         cbRem = findViewById(R.id.cbReminder);
         databaseHelper = new DatabaseHelper(this);
         final FloatingActionButton fabSubmit = findViewById(R.id.fabSubmit);
-        final FloatingActionButton fabContacts = findViewById(R.id.fabContacts);
+        final ImageButton btnContact = findViewById(R.id.btnContacts);
         cbRem.setTypeface(ResourcesCompat.getFont(this, R.font.nunito_extra_light));
         descSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -144,7 +145,7 @@ public class NewDebtActivity extends AppCompatActivity {
                 }
             }
         });
-        fabContacts.setOnClickListener(new View.OnClickListener() {
+        btnContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (hasPermissions()) {
